@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           https://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util.xsd
+                           http://www.springframework.org/schema/tx
+                           http://www.springframework.org/schema/tx/spring-tx.xsd
+                           http://www.springframework.org/schema/mvc
+                           http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+                
+           
+                    <util:list list-class="java.util.LinkedList" id="mybest">
+                    <value>aman</value>
+                    <value>eaman</value>
+                    <value>aeman</value>
+                    <value>amean</value>
+                    </util:list>
+                    
+                    <util:map map-class="java.util.HashMap" id="fees">
+                    <entry key="Spring framework" value="8000"/>
+                    <entry key="django framework" value="5000"/>
+                    </util:map>
+          
+           <bean class="com.springcore.standalone.collections.Person" name="p1">
+		<!--<prope rty name="friends">
+           <ref bean="mybest"/>
+           </property> -->
+           <property name="friends" ref="mybest"/>
+           <property name="feestruct" ref="fees"/>
+           </bean>
+   
+</beans>
